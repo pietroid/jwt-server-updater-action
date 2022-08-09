@@ -4,8 +4,8 @@ inputs:
   twilioAccountSid:  
     description: 'twilioAccountSid'
     required: true
-  twilioAccountSid: 
-    description: 'twilioAccountSid'
+  twilioApiKey: 
+    description: 'twilioApiKey'
     required: true
   twilioApiSecret:  
     description: 'twilioApiSecret'
