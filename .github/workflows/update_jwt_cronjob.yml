@@ -17,12 +17,12 @@ jobs:
       - name: Update JWT
         uses: pietroid/jwt-server-updater-action@v1.0
         with:
-          twilioAccountSid: ${{ secrets.twilioAccountSid }}
-          twilioApiKey: ${{ secrets.twilioApiKey }}
-          twilioApiSecret: ${{ secrets.twilioApiSecret }}
-          serviceSid: ${{ secrets.serviceSid }}
-          mockServerURL: ${{ secrets.mockServerURL }}
-          postmanEnvURL: ${{ secrets.postmanEnvURL }}
-          mockServerEnvID: ${{ secrets.mockServerEnvID }}
-          postmanAPIKey: ${{ secrets.postmanAPIKey }}
+          twilioAccountSid: ${{ secrets.TWILIO_ACCOUNT_SID }}
+          twilioApiKey: ${{ secrets.TWILIO_API_KEY }}
+          twilioApiSecret: ${{ secrets.TWILIO_API_SECRET }}
+          serviceSid: ${{ secrets.SERVICE_SID }}
+          mockServerURL: ${{ secrets.MOCK_SERVER_URL }}
+          postmanEnvURL: ${{ secrets.POSTMAN_ENV_URL }}
+          mockServerEnvID: ${{ secrets.MOCK_SERVER_ENV_ID }}
+          postmanAPIKey: ${{ secrets.POSTMAN_API_KEY }}
           
