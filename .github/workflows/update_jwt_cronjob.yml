@@ -15,7 +15,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Update JWT
-        uses: pietroid/jwt-server-updater-action@v1.0
+        uses: pietroid/jwt-server-updater-action@v1.1
         with:
           twilioAccountSid: ${{ secrets.TWILIO_ACCOUNT_SID }}
           twilioApiKey: ${{ secrets.TWILIO_API_KEY }}
