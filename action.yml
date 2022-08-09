@@ -1,0 +1,33 @@
+name: 'JWT server updater'
+description: 'Get twilio jwt token and update on mock server'
+inputs:
+  twilioAccountSid:  
+    description: 'twilioAccountSid'
+    required: true
+  twilioAccountSid: 
+    description: 'twilioAccountSid'
+    required: true
+  twilioApiSecret:  
+    description: 'twilioApiSecret'
+    required: true
+  serviceSid: 
+    description: 'serviceSid'
+    required: true
+  mockServerURL:  
+    description: 'mockServerURL'
+    required: true
+  postmanEnvURL:  
+    description: 'postmanEnvURL'
+    required: true
+  mockServerEnvID:  
+    description: 'mockServerEnvID'
+    required: true
+  postmanAPIKey:  
+    description: 'postmanAPIKey'
+    required: true
+outputs:
+  status: 
+    description: 'Status'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'

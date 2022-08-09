@@ -1,0 +1,25 @@
+{
+  "name": "jwt-server-updater-action",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pietroid/jwt-server-updater-action.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pietroid/jwt-server-updater-action/issues"
+  },
+  "homepage": "https://github.com/pietroid/jwt-server-updater-action#readme",
+  "dependencies": {
+    "@actions/core": "^1.9.1",
+    "@actions/github": "^5.0.3",
+    "axios": "^0.27.2",
+    "twilio": "^3.80.0"
+  }
+}
