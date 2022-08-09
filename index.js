@@ -3,6 +3,18 @@ const github = require('@actions/github');
 const AccessToken = require('twilio').jwt.AccessToken;
 const axios = require('axios');
 
+let twilioAccountSid;
+let twilioApiKey;
+let twilioApiSecret;
+
+// Used specifically for creating Chat tokens
+let serviceSid;
+
+let mockServerURL;
+let postmanEnvURL;
+let mockServerEnvID;
+let postmanAPIKey;
+
 async function getIdentities () {
     const response = await axios.get(mockServerURL + 'test/scenarios');
     return response.data.scenarios.map((scenario) => scenario.identity);
@@ -82,17 +94,17 @@ async function updateTokens (tokens){
 async function run(){
     try {
         // Used when generating any kind of tokens
-        const twilioAccountSid = core.getInput('twilioAccountSid');
-        const twilioApiKey = core.getInput('twilioApiKey');
-        const twilioApiSecret = core.getInput('twilioApiSecret');
+        twilioAccountSid = core.getInput('twilioAccountSid');
+        twilioApiKey = core.getInput('twilioApiKey');
+        twilioApiSecret = core.getInput('twilioApiSecret');
     
         // Used specifically for creating Chat tokens
-        const serviceSid = core.getInput('serviceSid');
+        serviceSid = core.getInput('serviceSid');
     
-        const mockServerURL = core.getInput('mockServerURL');
-        const postmanEnvURL = core.getInput('postmanEnvURL');
-        const mockServerEnvID = core.getInput('mockServerEnvID');
-        const postmanAPIKey = core.getInput('postmanAPIKey');
+        mockServerURL = core.getInput('mockServerURL');
+        postmanEnvURL = core.getInput('postmanEnvURL');
+        mockServerEnvID = core.getInput('mockServerEnvID');
+        postmanAPIKey = core.getInput('postmanAPIKey');
       
         const identities = await getIdentities();
         const tokens = getTokens(identities);
