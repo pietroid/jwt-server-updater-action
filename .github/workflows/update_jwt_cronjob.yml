@@ -1,0 +1,28 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Update JWT on Mock Server
+
+# Controls when the workflow will run
+on:
+  schedule:
+  - cron: "3 */12 * * *"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Update JWT
+        uses: pietroid/jwt-server-updater-action@v1.0
+        with:
+          twilioAccountSid: ${{ secrets.TWILIO_ACCOUNT_SID }}
+          twilioApiKey: ${{ secrets.TWILIO_API_KEY }}
+          twilioApiSecret: ${{ secrets.TWILIO_API_SECRET }}
+          serviceSid: ${{ secrets.SERVICE_SID }}
+          mockServerURL: ${{ secrets.MOCK_SERVER_URL }}
+          postmanEnvURL: ${{ secrets.POSTMAN_ENV_URL }}
+          mockServerEnvID: ${{ secrets.MOCK_SERVER_ENV_ID }}
+          postmanAPIKey: ${{ secrets.POSTMAN_API_KEY }}
+          
